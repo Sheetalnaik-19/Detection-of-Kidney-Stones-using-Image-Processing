@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Stone Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Kidney Stone Detection</h1>
+    <div class="container">
+        <div class="box left">
+            <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                <label for="file" id="file-label">Choose File</label>
+                <input type="file" name="file" id="file" accept="image/*" required style="display: none;">
+                <button type="submit" id="upload-button">Upload and Detect</button>
+            </form>
+            <img id="preview" src="#" alt="Image Preview" style="display:none;">
+        </div>
+        <div class="box right">
+            {% if result %}
+                <h2>{{ result }}</h2>
+                <img src="{{ url_for('static', filename='output.jpg') }}" alt="Result Image">
+                <button class="refresh-button" onclick="window.location.href='/'">Refresh</button>
+                <script>
+                    document.getElementById('file-label').style.display = 'none';
+                    document.getElementById('file').style.display = 'none';
+                    document.getElementById('upload-button').style.display = 'none';
+                </script>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.getElementById('file-label').onclick = function() {
+            document.getElementById('file').click();
+            return false; // Prevent default action
+        };
+        document.getElementById('file').onchange = function(event) {
+            const [file] = event.target.files;
+            if (file) {
+                document.getElementById('preview').src = URL.createObjectURL(file);
+                document.getElementById('preview').style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>
