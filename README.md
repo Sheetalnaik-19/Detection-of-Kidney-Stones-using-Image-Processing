@@ -8,14 +8,14 @@ This project utilizes a computational approach to automate Kidney Stone detectio
 <br>
 
 2. make sure that the structure of your files is like so...
-Detection-of-Kidney-Stones-using-Image-Processing-main/
-├── app.py
-├── templates/
-│   └── index.html
-├── static/
-│   └── (your static files like CSS, JS, images)
-└── venv/
-    └── (virtual environment files)
+Detection-of-Kidney-Stones-using-Image-Processing-main/<br>
+├── app.py<br>
+├── templates/<br>
+│   └── index.html<br>
+├── static/<br>
+│   └── (your static files like CSS, JS, images)<br>
+└── venv/<br>
+    └── (virtual environment files)<br>
 <br>
 
 3.install all the necessary packages(opencv or cv2, numpy, flask) after placing all the code in the apt locations. click on run and click on the link that you obtain ignore the red warnings given before the link.
@@ -24,11 +24,4 @@ if you have run the file properly you will see the below message in the run cons
 <br>
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on http://127.0.0.1:5000  /**<--link(click on this in your pycharm run console)**/
-Press CTRL+C to quit
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 314-202-268
-127.0.0.1 - - [05/Aug/2024 21:28:05] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [05/Aug/2024 21:28:05] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [05/Aug/2024 21:28:05] "GET /static/styles.css HTTP/1.1" 200 -
 
